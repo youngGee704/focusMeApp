@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "translate": "npx lingo.dev@latest i18n",
+    "translate": "npx lingo.dev@latest i18n --token $LINGODOTDEV_API_KEY",
     "translate:init": "npx lingo.dev@latest init",
     "translate:login": "npx lingo.dev@latest login"
   },
@@ -46,7 +46,15 @@
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3"
   },
-  "keywords": ["pomodoro", "productivity", "timer", "focus", "nextjs", "supabase", "tailwindcss"],
+  "keywords": [
+    "pomodoro",
+    "productivity",
+    "timer",
+    "focus",
+    "nextjs",
+    "supabase",
+    "tailwindcss"
+  ],
   "author": "FocusMe Team",
   "license": "MIT"
 }
