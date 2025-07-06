@@ -151,13 +151,6 @@ export function TimerSection({ preferences, onSessionComplete }: TimerSectionPro
     <div className="text-center space-y-8">
       <Card className="max-w-md mx-auto focus-glow">
         <CardContent className="p-8 space-y-6">
-          <div className="space-y-2">
-            <h2 className={`text-lg font-semibold ${getSessionTypeColor()}`}>{getSessionTypeLabel()}</h2>
-            <p className="text-sm text-muted-foreground">
-              {t("timer.session")} {sessionCount + 1}
-            </p>
-          </div>
-
           <div className="relative">
             <div className="w-48 h-48 mx-auto relative">
               <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">

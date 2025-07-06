@@ -7,6 +7,7 @@ import { StatsSection } from "./stats-section"
 import { SettingsPanel } from "./settings-panel"
 import { useAuth } from "@/components/providers/auth-provider"
 import { supabase } from "@/lib/supabase"
+import { useIntegrations } from "@/hooks/use-integrations"
 
 export interface UserPreferences {
   work_duration: number
@@ -40,6 +41,8 @@ export function Dashboard() {
     notification_sound: true,
   })
   const [sessions, setSessions] = useState<Session[]>([])
+
+  const { trackSession, adaptThemeForSession } = useIntegrations()
 
   useEffect(() => {
     if (user) {
@@ -107,6 +110,8 @@ export function Dashboard() {
 
     if (data && !error) {
       setSessions((prev) => [data, ...prev])
+      // Track with Autumn
+      trackSession(session.type, session.duration, session.completed)
     }
   }
 
