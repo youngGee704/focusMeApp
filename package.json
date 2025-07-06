@@ -5,11 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run translate && next build",
+    "build": "sh -c 'if [ \"$VERCEL\" != \"1\" ]; then npm run translate; fi' && next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "translate": "npx lingo.dev@latest i18n --token $LINGODOTDEV_API_KEY",
+    "translate": "npx lingo.dev@latest i18n",
     "translate:init": "npx lingo.dev@latest init",
     "translate:login": "npx lingo.dev@latest login"
   },
